@@ -53,6 +53,8 @@ func _on_Area2D_area_entered(area):
 		get_tree().change_scene("res://Scenes/Lvls/level3.tscn")
 	if area.is_in_group("door3"):
 		get_tree().change_scene("res://Scenes/Lvls/4.tscn")
+	if area.is_in_group("door4"):
+		get_tree().change_scene("res://Scenes/Lvls/5.tscn")
 
 
 func _on_CollisionShape2D_tree_entered(area):
