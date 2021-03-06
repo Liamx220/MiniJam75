@@ -72,6 +72,17 @@ extents = Vector2( 4.375, 7.00791 )
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
+[node name="Weight" type="Label" parent="."]
+margin_left = -81.0714
+margin_top = -54.4388
+margin_right = -5.07137
+margin_bottom = -40.4388
+rect_scale = Vector2( 0.772842, 1 )
+text = "Weight"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
@@ -92,7 +103,7 @@ __meta__ = {
 position = Vector2( 0.854, 0 )
 frames = SubResource( 10 )
 animation = "rightIdle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
