@@ -103,7 +103,6 @@ __meta__ = {
 position = Vector2( 0.854, 0 )
 frames = SubResource( 10 )
 animation = "rightIdle"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -114,7 +113,9 @@ shape = SubResource( 11 )
 current = true
 zoom = Vector2( 0.3, 0.3 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"player",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 12 )
