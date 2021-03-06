@@ -41,8 +41,18 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("food"):
 		weight_int_num.Weight -= 5
 		area.queue_free()
+	if area.is_in_group("10"):
+		weight_int_num.Weight -= 10
+		area.queue_free()
+	if area.is_in_group("bad5"):
+		weight_int_num.Weight += 10
+		area.queue_free()
 	if area.is_in_group("door"):
 		get_tree().change_scene("res://Scenes/Lvls/2.tscn")
+	if area.is_in_group("door2"):
+		get_tree().change_scene("res://Scenes/Lvls/level3.tscn")
+	if area.is_in_group("door3"):
+		get_tree().change_scene("res://Scenes/Lvls/4.tscn")
 
 
 func _on_CollisionShape2D_tree_entered(area):

@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Art/broc.png" type="Texture" id=1]
+[gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.79315, 4.80987 )
@@ -14,7 +12,3 @@ extents = Vector2( 3.79315, 4.80987 )
 ]]
 position = Vector2( 0.145683, -0.641689 )
 shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1.40519, 1.40519 )
-texture = ExtResource( 1 )
