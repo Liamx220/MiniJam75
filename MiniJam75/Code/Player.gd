@@ -32,6 +32,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
+			$jump.play()
 			velocity.y = jump_speed
 
 
@@ -48,6 +49,7 @@ func _on_Area2D_area_entered(area):
 		weight_int_num.Weight += 10
 		area.queue_free()
 	if area.is_in_group("door"):
+		
 		get_tree().change_scene("res://Scenes/Lvls/2.tscn")
 	if area.is_in_group("door2"):
 		get_tree().change_scene("res://Scenes/Lvls/level3.tscn")

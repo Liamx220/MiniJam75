@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Art/door.png" type="Texture" id=1]
+[ext_resource path="res://Art/doornew.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.86757, 8.7946 )
+extents = Vector2( 7.26222, 8.7946 )
 
 [node name="Area2D" type="Area2D" groups=[
 "door",
@@ -13,5 +13,5 @@ extents = Vector2( 8.86757, 8.7946 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.143724, 0.143724 )
+scale = Vector2( 0.992862, 0.992862 )
 texture = ExtResource( 1 )
