@@ -6,6 +6,7 @@ export (int) var gravity = 300
 onready var weight_int_num = get_node("/root/Weight")
 onready var weight_text = get_node("Weight")
 
+
 var velocity = Vector2()
 
 func _ready():
@@ -25,6 +26,9 @@ func get_input():
 		$AnimatedSprite.play("rightWalk")
 
 func _physics_process(delta):
+	
+
+		
 	var weight_text = get_node("Weight")
 	weight_text.text = "Weight: " + str(weight_int_num.Weight)
 	get_input()
@@ -78,3 +82,7 @@ func _on_CollisionShape2D_tree_entered(area):
 func _on_Button_button_down():
 	get_tree().reload_current_scene()
 	get_tree().change_scene("res://Scenes/Lvls/1.tscn")
+
+
+func _on_next_button_down():
+	get_tree().change_scene("res://tutorial2.tscn")

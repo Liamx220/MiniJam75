@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://manaspc.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Art/tiles.res" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Lvls/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Minecraft.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 11
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1.12247, -7.85724 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -458784, 1610612749, 0, -524280, 1610612749, 0, -393248, 1610612749, 0, -458744, 1610612749, 0, -327717, -1073741815, 0, -327716, 8, 0, -327715, 8, 0, -327714, 8, 0, -327713, 8, 0, -327712, 8, 0, -327711, 8, 0, -327710, 8, 0, -327709, 8, 0, -327708, 8, 0, -327707, 8, 0, -327706, 8, 0, -327705, 8, 0, -327704, 8, 0, -327703, 9, 0, -393208, 1610612749, 0, -262181, -1073741816, 0, -262167, -1610612728, 0, -327672, 1610612749, 0, -196645, -1073741816, 0, -196631, -1610612728, 0, -262136, 1610612749, 0, -131109, -1073741816, 0, -131095, -1610612728, 0, -196600, 1610612749, 0, -65573, -1073741816, 0, -65559, -1610612728, 0, -131064, 1610612749, 0, -37, -1073741816, 0, -23, -1610612728, 0, 65499, 1610612745, 0, 65500, 1610612744, 0, 65501, 1610612744, 0, 65502, 1610612744, 0, 65503, 1610612744, 0, 65504, 1610612744, 0, 65505, 1610612744, 0, 65506, 1610612744, 0, 65507, 1610612744, 0, 65508, 1610612744, 0, 65509, 1610612744, 0, 65510, 1610612744, 0, 65511, 1610612744, 0, 65512, 1610612744, 0, 65513, -1610612727, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -472.885, -27.8878 )
+
+[node name="Label" type="Label" parent="player"]
+margin_left = -85.0
+margin_top = 10.0
+margin_right = 60.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 3 )
+text = "Use the AD and arrow keys to move. Press space to jump"
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="Button" parent="player"]
+margin_left = 25.2273
+margin_top = -55.7818
+margin_right = 84.2273
+margin_bottom = -33.7818
+custom_fonts/font = SubResource( 2 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="player/next" to="player" method="_on_next_button_down"]
