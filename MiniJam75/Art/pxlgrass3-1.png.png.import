@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pxlgrass3.png-a588159eb4f49fc4df9fe08963082806.stex"
+path="res://.import/pxlgrass3-1.png.png-f4d1473fa0e5292b12310e45f027fac5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/pxlgrass3.png"
-dest_files=[ "res://.import/pxlgrass3.png-a588159eb4f49fc4df9fe08963082806.stex" ]
+source_file="res://Art/pxlgrass3-1.png.png"
+dest_files=[ "res://.import/pxlgrass3-1.png.png-f4d1473fa0e5292b12310e45f027fac5.stex" ]
 
 [params]
 
