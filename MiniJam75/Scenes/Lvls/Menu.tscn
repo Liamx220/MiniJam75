@@ -9,15 +9,9 @@ size = 50
 outline_size = 2
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 65
 outline_size = 3
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 47
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -27,6 +21,12 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 47
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 47
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
@@ -73,7 +73,7 @@ margin_left = -330.0
 margin_top = -174.279
 margin_right = 330.0
 margin_bottom = -108.279
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Weight Watchers"
 align = 1
@@ -87,7 +87,7 @@ margin_left = -108.5
 margin_top = -45.8471
 margin_right = 108.5
 margin_bottom = 20.1529
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -102,7 +102,7 @@ margin_left = -118.0
 margin_top = 25.5798
 margin_right = 118.0
 margin_bottom = 90.5798
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Tutorial"
 
 [node name="Button3" type="Button" parent="."]
@@ -114,7 +114,7 @@ margin_left = -117.0
 margin_top = 102.89
 margin_right = 117.0
 margin_bottom = 165.89
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
