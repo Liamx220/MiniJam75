@@ -1,22 +1,24 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Art/charSheet.png" type="Texture" id=1]
 [ext_resource path="res://Art/sky.png" type="Texture" id=2]
 [ext_resource path="res://Code/Player.gd" type="Script" id=3]
-[ext_resource path="res://ConnectionIi-2wj8.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://sounds/level_up.wav" type="AudioStream" id=5]
 [ext_resource path="res://sounds/object.wav" type="AudioStream" id=6]
 [ext_resource path="res://sounds/chipsiunnew.wav" type="AudioStream" id=7]
+[ext_resource path="res://ConnectionIi-2wj8.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://Scenes/Lvls/quit.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Lvls/pause.gd" type="Script" id=10]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 16, 16 )
 
@@ -46,7 +48,7 @@ region = Rect2( 16, 16, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "rightIdle",
 "speed": 5.0
@@ -67,15 +69,24 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 4.52526, 8.32474 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 7.30956, 8.75637 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=16]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 56
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 70
+outline_size = 2
+font_data = ExtResource( 8 )
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 3 )
@@ -105,7 +116,7 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -0.222725 )
-shape = SubResource( 11 )
+shape = SubResource( 14 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -118,7 +129,7 @@ position = Vector2( 0.157501, -0.31498 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -0.198425, 0.198423 )
-shape = SubResource( 12 )
+shape = SubResource( 15 )
 
 [node name="Weight" type="Label" parent="."]
 light_mask = 4
@@ -127,7 +138,7 @@ margin_top = -57.0
 margin_right = 39.0
 margin_bottom = -19.0
 rect_scale = Vector2( 0.772842, 1 )
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 16 )
 text = "Weight"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -143,4 +154,91 @@ stream = ExtResource( 5 )
 [node name="eat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -1.061
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -388.162
+margin_top = -259.878
+margin_right = -207.162
+margin_bottom = -139.878
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/pause"]
+position = Vector2( 386.704, 256.096 )
+scale = Vector2( 12.7841, 12.7841 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="CanvasLayer/pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 180.813
+margin_top = 258.414
+margin_right = 418.813
+margin_bottom = 321.414
+custom_fonts/font = SubResource( 17 )
+text = "Quit"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="CanvasLayer/pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 140.064
+margin_top = 181.19
+margin_right = 451.064
+margin_bottom = 244.19
+custom_fonts/font = SubResource( 17 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="CanvasLayer/pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 174.004
+margin_top = 101.962
+margin_right = 424.004
+margin_bottom = 164.962
+custom_fonts/font = SubResource( 17 )
+text = "Unpause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 5.16086
+margin_top = 6.57739
+margin_right = 607.161
+margin_bottom = 76.5774
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.956863, 0.94902, 0.94902, 1 )
+text = "Paused"
+align = 1
+autowrap = true
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="button_down" from="CanvasLayer/pause/Button" to="CanvasLayer/pause/Button" method="_on_Button_button_down"]
+[connection signal="button_down" from="CanvasLayer/pause/Button3" to="CanvasLayer/pause" method="_on_Button3_button_down"]

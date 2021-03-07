@@ -62,8 +62,19 @@ func _on_Area2D_area_entered(area):
 		get_tree().change_scene("res://Scenes/Lvls/5.tscn")
 	if area.is_in_group("door5"):
 		get_tree().change_scene("res://Scenes/Lvls/6.tscn")
-
+	if area.is_in_group("Dentist"):
+		if weight_int_num.Weight <= 200:
+			get_tree().change_scene("res://final.tscn")
+			
+		elif weight_int_num.Weight > 200:
+			var no = get_node("Control")
+			no.visible = true
 
 func _on_CollisionShape2D_tree_entered(area):
 	if area.is_in_group("enemy"):
 		get_tree().reload_current_scene()
+
+
+func _on_Button_button_down():
+	get_tree().reload_current_scene()
+	get_tree().change_scene("res://Scenes/Lvls/1.tscn")

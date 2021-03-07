@@ -1,17 +1,159 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Code/Player.gd" type="Script" id=1]
 [ext_resource path="res://Art/tiles.res" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Lvls/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/dentists office.png" type="Texture" id=4]
+[ext_resource path="res://ConnectionIi-2wj8.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Art/sky.png" type="Texture" id=6]
+[ext_resource path="res://font.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Art/charSheet.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 38.3671, 21.4405 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 21
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 8 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 8 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 8 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 8 )
+region = Rect2( 32, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 8 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 8 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "rightIdle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 4 ) ],
+"loop": true,
+"name": "leftIdle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "leftWalk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "rightWalk",
+"speed": 5.0
+} ]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="player" type="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( -451.561, -27.7496 )
-script = ExtResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -655365, 13, 0, -589829, 13, 0, -524293, 13, 0, -458784, 13, 0, -458783, 13, 0, -458757, 13, 0, -393248, 13, 0, -393247, 13, 0, -393221, 13, 0, -327712, 13, 0, -327711, 13, 0, -327685, 13, 0, -262176, 13, 0, -262175, 13, 0, -262149, 13, 0, -196640, 13, 0, -196639, 13, 0, -196617, -1073741819, 0, -196616, -1073741815, 0, -196615, 8, 0, -196614, 9, 0, -196613, 13, 0, -131104, 13, 0, -131103, 13, 0, -131080, -1073741816, 0, -131079, 1610612737, 0, -131078, -1610612728, 0, -131077, 13, 0, -131076, 13, 0, -65568, 13, 0, -65567, 13, 0, -65554, -1073741819, 0, -65553, -1073741815, 0, -65552, 8, 0, -65551, 8, 0, -65550, 8, 0, -65549, 8, 0, -65548, 8, 0, -65547, 8, 0, -65546, 8, 0, -65545, 9, 0, -65544, 1610612745, 0, -65543, 1610612744, 0, -65542, -1610612727, 0, -65541, 13, 0, -65540, 13, 0, -32, 13, 0, -31, 13, 0, -19, -1073741815, 0, -18, 9, 0, -17, -1073741816, 0, -16, -1610612735, 0, -15, -1610612735, 0, -14, -1610612735, 0, -13, -1610612735, 0, -12, 1, 0, -11, 1610612737, 0, -10, 1610612737, 0, -9, -1610612728, 0, -5, 13, 0, 65504, 13, 0, 65505, -1073741815, 0, 65506, 8, 0, 65507, 8, 0, 65508, 8, 0, 65509, 8, 0, 65510, 8, 0, 65511, 8, 0, 65512, 8, 0, 65513, 8, 0, 65514, 8, 0, 65515, 8, 0, 65516, 9, 0, 65517, 1610612745, 0, 65518, -1610612727, 0, 65519, 1610612745, 0, 65520, 1610612744, 0, 65521, 1610612744, 0, 65522, 1610612744, 0, 65523, 1610612744, 0, 65524, 1610612744, 0, 65525, 1610612744, 0, 65526, 1610612744, 0, 65527, -1610612727, 0, 131040, 13, 0, 131041, -1073741816, 0, 131042, 1, 0, 131043, 1, 0, 131044, 1, 0, 131045, 1, 0, 131046, 1, 0, 131047, 1, 0, 131048, 1, 0, 131049, 1, 0, 131050, 1610612737, 0, 131051, 1610612737, 0, 131052, -1610612728, 0, 196576, 1610612741, 0, 196577, 1610612745, 0, 196578, 1610612744, 0, 196579, 1610612744, 0, 196580, 1610612744, 0, 196581, 1610612744, 0, 196582, 1610612744, 0, 196583, 1610612744, 0, 196584, 1610612744, 0, 196585, 1610612744, 0, 196586, 1610612744, 0, 196587, 1610612744, 0, 196588, -1610612727, 0, 196589, -1610612731, 0 )
+tile_data = PoolIntArray( -655365, 13, 0, -589829, 13, 0, -524319, 1610612749, 0, -524300, 1610612749, 0, -524293, 13, 0, -458784, 13, 0, -458783, 1610612749, 0, -458764, 1610612749, 0, -458757, 13, 0, -393248, 13, 0, -393247, 1610612749, 0, -393228, 1610612749, 0, -393221, 13, 0, -327712, 13, 0, -327711, 1610612749, 0, -327692, 1610612749, 0, -327685, 13, 0, -262176, 13, 0, -262175, 1610612749, 0, -262156, 1610612749, 0, -262149, 13, 0, -196640, 13, 0, -196639, 1610612749, 0, -196620, 1610612749, 0, -196617, -1073741819, 0, -196613, 13, 0, -131104, 13, 0, -131103, 1610612749, 0, -131084, 1610612749, 0, -131076, 13, 0, -65568, 13, 0, -65567, 1610612749, 0, -65548, 1610612749, 0, -65540, 13, 0, -32, 13, 0, -31, 1610612749, 0, -12, 1610612749, 0, -5, 13, 0, 65504, 13, 0, 65505, -1073741815, 0, 65506, 8, 0, 65507, 8, 0, 65508, 8, 0, 65509, 8, 0, 65510, 8, 0, 65511, 8, 0, 65512, 8, 0, 65513, 8, 0, 65514, 8, 0, 65515, 8, 0, 65516, 8, 0, 65517, 8, 0, 65518, 8, 0, 65519, 8, 0, 65520, 8, 0, 65521, 8, 0, 65522, 8, 0, 65523, 8, 0, 65524, 9, 0, 131040, 13, 0, 131041, -1073741816, 0, 131042, 1, 0, 131043, 1, 0, 131044, 1, 0, 131045, 1, 0, 131046, 1, 0, 131047, 1, 0, 131048, 1, 0, 131049, 1, 0, 131050, 1610612737, 0, 131051, 1610612737, 0, 131052, 1610612737, 0, 131053, 1610612737, 0, 131054, 1610612737, 0, 131055, 1610612737, 0, 131056, 1610612737, 0, 131057, 1610612737, 0, 131058, 1610612737, 0, 131059, 1610612737, 0, 131060, -1610612728, 0, 196576, 1610612741, 0, 196577, 1610612745, 0, 196578, 1610612744, 0, 196579, 1610612744, 0, 196580, 1610612744, 0, 196581, 1610612744, 0, 196582, 1610612744, 0, 196583, 1610612744, 0, 196584, 1610612744, 0, 196585, 1610612744, 0, 196586, 1610612744, 0, 196587, 1610612744, 0, 196588, 1610612744, 0, 196589, 1610612744, 0, 196590, 1610612744, 0, 196591, 1610612744, 0, 196592, 1610612744, 0, 196593, 1610612744, 0, 196594, 1610612744, 0, 196595, 1610612744, 0, 196596, -1610612727, 0 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"Dentist",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -247.867, -15.0595 )
+shape = SubResource( 1 )
+
+[node name="dentists office" type="Sprite" parent="Area2D"]
+position = Vector2( -247.718, -15.2024 )
+texture = ExtResource( 4 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Area2D/dentists office"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/dentists office/KinematicBody2D"]
+position = Vector2( -0.149292, 0.142849 )
+shape = SubResource( 1 )
+
+[node name="player" type="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -449.561, -31.2496 )
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="player"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="player/Control"]
+position = Vector2( 0.0592594, 0.862461 )
+scale = Vector2( 3.76014, 3.74154 )
+texture = ExtResource( 6 )
+
+[node name="Button" type="Button" parent="player/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -85.6001
+margin_top = -19.4162
+margin_right = 46.3999
+margin_bottom = 4.58376
+custom_fonts/font = SubResource( 3 )
+text = "Play again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="player/Control"]
+margin_left = -95.0
+margin_top = -52.0
+margin_right = 94.0
+margin_bottom = -5.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You are not the correct weight"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="player/Control"]
+position = Vector2( 0.854, 38.6704 )
+frames = SubResource( 10 )
+animation = "rightIdle"
+playing = true
+[connection signal="button_down" from="player/Control/Button" to="player" method="_on_Button_button_down"]
