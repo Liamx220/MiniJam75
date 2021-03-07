@@ -40,13 +40,16 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("enemy"):
 		get_tree().reload_current_scene()
 	if area.is_in_group("food"):
+		$eat.play()
 		weight_int_num.Weight -= 5
 		area.queue_free()
 	if area.is_in_group("10"):
+		$eat.play()
 		weight_int_num.Weight -= 10
 		area.queue_free()
 	if area.is_in_group("bad5"):
 		weight_int_num.Weight += 10
+		$eat.play()
 		area.queue_free()
 	if area.is_in_group("door"):
 		
