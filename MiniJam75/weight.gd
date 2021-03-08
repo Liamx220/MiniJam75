@@ -1,10 +1,10 @@
 extends Node
 
 
-var Weight = 130
+var Weight = 500
 
 func _ready():
-	var Weight = 130
+	var Weight = 500
 
 
 
